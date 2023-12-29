@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,200;0,300;0,600;0,700;0,800;1,400;1,500&family=Rubik+Doodle+Shadow&display=swap');
+
+
+
+
+body {
+    background-color: #fff;
+}
+
+/* 深色主題樣式 */
+body {
+    background: var(--grey);
+    overflow: hidden;
+
+    &-dark {
+        --light: #181a1e;
+        --grey: #25252c;
+        --dark: #fbfbfb;
+    }
+
+}
+
+:root {
+    --color-content-1: red;
+    --color-content-2: orange;
+    --color-content-3: yellow;
+    --color-content-4: rgb(11, 59, 11);
+    --color-content-5: blue;
+    --color-content-6: purple;
+    --color-content-7: pink;
+    --color-content-8: brown;
+    --color-btn-1: rgb(185, 126, 126);
+    --color-btn-2: rgb(188, 149, 97);
+    --color-btn-3: rgb(188, 188, 97);
+    --color-btn-4: rgba(97, 188, 97, 0.2);
+    --color-btn-5: rgb(97, 188, 188);
+    --color-btn-6: rgb(97, 97, 188);
+    --color-btn-7: rgb(188, 97, 188);
+    --light: #f6f6f9;
+    --primary: #1976D2;
+    --light-primary: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: #363949;
+    --danger: #D32F2F;
+    --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBD7D0;
+}
+
+html {
+    overflow: hidden;
+}
+
+
+
+.main {
+    height: 100%;
+    width: 340px;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    background-color: var(--color-btn-4);
+    /* 位置固定 */
+    border-right: 0.5px solid var(--color-btn-4);
+    position: fixed;
+    overflow-y: auto;
+    text-align: center;
+    overflow: hidden; //可能會有影響 暫時先放這
+    transition: all 0.3s ease;
+
+    li {
+        list-style: none;
+    }
+
+    .main::-webkit-scrollbar {
+        display: none;
+    }
+
+    .icon img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 25px;
+
+    }
+
+    .main h4 {
+        font-size: 20px;
+        color: cadetblue;
+        text-transform: capitalize;
+        font-family: 'Poppins', sans-serif;
+
+
+
+    }
+
+    .navbar {
+
+        display: flex;
+        flex-direction: column;
+        font-family: 'Poppins', sans-serif;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        letter-spacing: 2px;
+        color: cadetblue;
+        gap: 30px;
+        list-style: none;
+        font-size: 15px;
+
+    }
+
+    .navbar a {
+        color: cadetblue;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+        padding-left: 0;
+    }
+
+    .solo {
+        display: flex;
+        padding-top: 30px;
+        gap: 5px;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+    }
+
+
+
+    .classdemo a:hover {
+        color: var(--color-content-4);
+        cursor: pointer; //當我滑鼠懸停在該元素時 鼠標樣式會變成手指
+    }
+
+    .about a:hover {
+        color: var(--color-content-4);
+        cursor: pointer;
+    }
+
+    .traning a:hover {
+        color: var(--color-content-4);
+        cursor: pointer;
+    }
+
+    .demo {
+        display: none;
+        flex-direction: column;
+        background-color: var(--color-btn-4);
+        list-style: none;
+    }
+
+    .theme-toggle {
+        display: block;
+        min-width: 50px;
+        height: 25px;
+        background: var(--color-btn-4);
+        cursor: pointer;
+        position: relative;
+        border-radius: 25px;
+    }
+
+    .theme-toggle::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        width: calc(25px - 4px);
+        background-color: var(--color-btn-3);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+
+
+    .showalldemo {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+}
+
+//contnet
+.content {
+    position: relative;
+    width: calc(100% - 340px);
+    left: 340px;
+    transition: all 0.3s ease;
+
+    .information{
+        display: flex;
+        width: 400px;
+        height: 200px;
+    }
+    .my-icon{
+        display: block;
+        width: 100%;
+        height: 200px;
+
+    }
+}
+
+#theme-toggle:checked+.theme-toggle::before {
+    left: calc(100% - (25px - 4px) - 2px);
+}
